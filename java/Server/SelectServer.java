@@ -82,7 +82,7 @@ public class SelectServer {
                         SocketChannel cchannel = (SocketChannel)key.channel();
                         if (key.isReadable())
                         {
-                            Socket socket = cchannel.socket();
+                            //Socket socket = cchannel.socket();
                         
                             // Open input and output streams
                             inBuffer = ByteBuffer.allocateDirect(BUFFERSIZE);
