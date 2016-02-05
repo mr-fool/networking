@@ -1,11 +1,4 @@
-/*
- * A simple TCP select server that accepts multiple connections and echo message back to the clients
- * For use in CPSC 441 lectures
- * Instructor: Prof. Mea Wang
- */
-
-t
-        import java.io.*;
+import java.io.*;
 import java.net.*;
 import java.nio.*;
 import java.nio.channels.*;
@@ -34,8 +27,8 @@ public class SelectServer {
         // Initialize the selector
         Selector selector = Selector.open();
 		
-		//Initialize the DatagramChannel
-		DatagramChannel udp = DatagramChannel.open();
+	//Initialize the DatagramChannel
+	DatagramChannel udp = DatagramChannel.open();
 		
         // Create a server channel and make it non-blocking
         ServerSocketChannel channel = ServerSocketChannel.open();
@@ -44,7 +37,7 @@ public class SelectServer {
         // Get the port number and bind the socket
         InetSocketAddress isa = new InetSocketAddress(Integer.parseInt(args[0]));
         channel.socket().bind(isa);
-		udp.socket().bind(isa);
+	udp.socket().bind(isa);
         // Register that the server selector is interested in connection requests
         channel.register(selector, SelectionKey.OP_ACCEPT);
 
