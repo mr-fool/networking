@@ -78,7 +78,6 @@ public class SelectServer {
                         Channel udpChannel = ((ServerSocketChannel)key.channel()).accept();
                         System.out.println("Accept conncection from " + udpChannel.toString());
                         // Register the new connection for read operation
-                        udpChannel.register(selector, SelectionKey.OP_READ);
                     } 
                     else 
                     {
