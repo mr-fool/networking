@@ -3,7 +3,7 @@ import socket
 server_socket = socket.socket()
 
 
-server_socket.blind( ('localhost' , 8888 ) )
+server_socket.bind( ('localhost' , 8888 ) )
 server_socket.listen(0)
 
 try:
@@ -14,6 +14,6 @@ try:
 
 except Exception as err:
 	print("An Exception has occured: {}".format(err) )
-    pass
+	pass
     
 server_socket.close()
