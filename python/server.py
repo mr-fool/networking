@@ -14,4 +14,6 @@ try:
 
 except Exception as err:
 	print("An Exception has occured: {}".format(err) )
+    pass
     
+server_socket.close()
