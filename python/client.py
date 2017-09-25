@@ -14,12 +14,12 @@ try:
 	sock.sendall(data + "\n")
 	
 	#receive data from the server and shut down
-	received = sock.recv(1024)
-	received2 = sock.recv(1024)
+	received = sock.recv(4096)
+	sock.sendall("received" + "\n")
+	received2 = sock.recv(4096)
 finally:
-	print "Sent: {}".format(data)
-	print "Received: {}".format(received)
-	print "Received: {}".format(received2)
 	sock.close()
 
-
+print "Sent: {}".format(data)
+print "Received: {}".format(received)
+print "Received: {}".format(received2)
