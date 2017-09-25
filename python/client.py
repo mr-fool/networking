@@ -1,7 +1,7 @@
 import socket
 import sys
 
-HOST, PORT = 'localhost', 8888
+HOST, PORT = 'localhost', 1234
 data = " ".join(sys.argv[1:])
 
 
@@ -15,9 +15,11 @@ try:
 	
 	#receive data from the server and shut down
 	received = sock.recv(1024)
-	
+	received2 = sock.recv(1024)
 finally:
+	print "Sent: {}".format(data)
+	print "Received: {}".format(received)
+	print "Received: {}".format(received2)
 	sock.close()
 
-print "Sent: {}".format(data)
-print "Received: {}".format(received)
+
